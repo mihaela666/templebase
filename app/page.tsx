@@ -2,7 +2,6 @@
 
 import { useState, useCallback, useEffect } from "react";
 import dynamic from "next/dynamic";
-import sdk from "@farcaster/miniapp-sdk";
 import BaseAppGate from "@/components/BaseAppGate";
 import Menu from "@/components/Menu";
 import GameOver from "@/components/GameOver";
@@ -30,10 +29,6 @@ export default function Home() {
       canGm(address).then((can) => setGmDone(!can));
     }
   }, [address, canGm]);
-
-  useEffect(() => {
-    sdk.actions.ready();
-  }, []);
 
   const handlePlay = useCallback(async () => {
     setScreen("game");

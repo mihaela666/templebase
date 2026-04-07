@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@farcaster/miniapp-sdk": "^0.2.3",
     "@privy-io/react-auth": "^2.0.0",
     "@types/three": "^0.183.1",
     "@upstash/redis": "^1.37.0",

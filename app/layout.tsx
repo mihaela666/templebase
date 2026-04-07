@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: "Temple Base",
     images: [
       {
-        url: "https://templeonbase.vercel.app/app-thumbnail.png",
+        url: "https://templeonbase.vercel.app/app-thumbnail.jpg",
         width: 1200,
         height: 628,
         alt: "Temple Base",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Temple Base",
     description: "Play Temple Base — the endless runner game, onchain.",
-    images: ["https://templeonbase.vercel.app/app-thumbnail.png"],
+    images: ["https://templeonbase.vercel.app/app-thumbnail.jpg"],
   },
   other: {
     "apple-mobile-web-app-title": "Temple Base",
