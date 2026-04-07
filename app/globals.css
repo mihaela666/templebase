@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+nextjs-portal {
+  display: none !important;
+}
+
+html,
+body {
+  overscroll-behavior: none;
+  overflow: hidden;
+  height: 100%;
+  height: 100dvh;
+}
+
+body {
+  background: #0a0e1a;
+  color: #e8edf5;
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #0d0a1a 0%, #1a1030 40%, #2a1a3a 100%);
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  will-change: transform;
+}
+
+.orb-1 {
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, #d97706 0%, #b45309 50%, transparent 70%);
+  top: -80px;
+  right: -60px;
+  animation: orbFloat1 8s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, #0052FF 0%, #0040cc 50%, transparent 70%);
+  bottom: 10%;
+  left: -80px;
+  animation: orbFloat2 10s ease-in-out infinite;
+}
+
+.orb-3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #7c3aed 0%, #6d28d9 50%, transparent 70%);
+  top: 40%;
+  right: -40px;
+  animation: orbFloat3 12s ease-in-out infinite;
+}
+
+.orb-4 {
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, #ef4444 0%, #dc2626 50%, transparent 70%);
+  bottom: -60px;
+  right: 20%;
+  opacity: 0.2;
+  animation: orbFloat4 9s ease-in-out infinite;
+}
+
+.orb-5 {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, #fbbf24 0%, #d97706 50%, transparent 70%);
+  top: 15%;
+  left: 10%;
+  opacity: 0.25;
+  animation: orbFloat5 11s ease-in-out infinite;
+}
+
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-30px, 40px) scale(1.05); }
+  66% { transform: translate(20px, -20px) scale(0.95); }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -30px) scale(1.08); }
+  66% { transform: translate(-20px, 20px) scale(0.92); }
+}
+
+@keyframes orbFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-35px, 30px) scale(1.1); }
+}
+
+@keyframes orbFloat4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40% { transform: translate(25px, -35px) scale(1.06); }
+  70% { transform: translate(-15px, 15px) scale(0.94); }
+}
+
+@keyframes orbFloat5 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, 25px) scale(1.12); }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+@layer utilities {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}

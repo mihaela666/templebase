@@ -1,0 +1,57 @@
+import type { Metadata, Viewport } from "next";
+import Providers from "./providers";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Temple Base",
+  description:
+    "An endless runner game inspired by Temple Run, built as a mini app for the Base ecosystem. Dodge, jump, and collect coins!",
+  applicationName: "Temple Base",
+  manifest: "/manifest.json",
+  openGraph: {
+    title: "Temple Base",
+    description: "Play Temple Base — the endless runner game, onchain.",
+    type: "website",
+    siteName: "Temple Base",
+    images: [
+      {
+        url: "https://templeonbase.vercel.app/app-thumbnail.png",
+        width: 1200,
+        height: 628,
+        alt: "Temple Base",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Temple Base",
+    description: "Play Temple Base — the endless runner game, onchain.",
+    images: ["https://templeonbase.vercel.app/app-thumbnail.png"],
+  },
+  other: {
+    "apple-mobile-web-app-title": "Temple Base",
+    "base:app_id": "REPLACE_WITH_YOUR_APP_ID",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: "#0d0a1a",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}

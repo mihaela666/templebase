@@ -1,0 +1,9 @@
+node_modules
+.next
+.env
+.env.local
+chain/.env
+chain/node_modules
+chain/artifacts
+chain/cache
+chain/typechain-types

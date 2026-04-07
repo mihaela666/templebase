@@ -1,0 +1,24 @@
+{
+  "accountAssociation": {
+    "header": "REPLACE_WITH_YOUR_HEADER",
+    "payload": "REPLACE_WITH_YOUR_PAYLOAD",
+    "signature": "REPLACE_WITH_YOUR_SIGNATURE"
+  },
+  "frame": {
+    "version": "1",
+    "name": "Temple Base",
+    "subtitle": "Dodge, jump, survive — on Base",
+    "description": "Play the classic endless runner Temple Base. Dodge obstacles, collect coins, chase high scores — fast, fun, and onchain.",
+    "iconUrl": "https://templeonbase.vercel.app/app-icon-1024.png",
+    "splashImageUrl": "https://templeonbase.vercel.app/app-thumbnail.png",
+    "splashBackgroundColor": "#0d0a1a",
+    "homeUrl": "https://templeonbase.vercel.app",
+    "webhookUrl": "https://templeonbase.vercel.app/api/webhook",
+    "primaryCategory": "games",
+    "tags": ["temple-base", "game", "runner", "base", "onchain"],
+    "heroImageUrl": "https://templeonbase.vercel.app/app-thumbnail.png",
+    "ogTitle": "Temple Base",
+    "ogDescription": "Play Temple Base — the endless runner game, onchain.",
+    "ogImageUrl": "https://templeonbase.vercel.app/app-thumbnail.png"
+  }
+}

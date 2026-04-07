@@ -1,0 +1,108 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "player", "type": "address", "indexed": true },
+      { "internalType": "uint32", "name": "totalRuns", "type": "uint32", "indexed": false }
+    ],
+    "name": "RunStarted",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "player", "type": "address", "indexed": true },
+      { "internalType": "uint32", "name": "score", "type": "uint32", "indexed": false },
+      { "internalType": "uint32", "name": "distance", "type": "uint32", "indexed": false },
+      { "internalType": "uint32", "name": "coins", "type": "uint32", "indexed": false },
+      { "internalType": "uint32", "name": "bestCombo", "type": "uint32", "indexed": false },
+      { "internalType": "bool", "name": "newHighScore", "type": "bool", "indexed": false }
+    ],
+    "name": "RunCompleted",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "player", "type": "address", "indexed": true },
+      { "internalType": "uint32", "name": "streak", "type": "uint32", "indexed": false },
+      { "internalType": "uint32", "name": "total", "type": "uint32", "indexed": false }
+    ],
+    "name": "GmCheckedIn",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "player", "type": "address", "indexed": true },
+      { "internalType": "uint256", "name": "tokenId", "type": "uint256", "indexed": false }
+    ],
+    "name": "ExplorerNFTMinted",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "startRun",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint32", "name": "score", "type": "uint32" },
+      { "internalType": "uint32", "name": "distance", "type": "uint32" },
+      { "internalType": "uint32", "name": "coins", "type": "uint32" },
+      { "internalType": "uint32", "name": "bestCombo", "type": "uint32" },
+      { "internalType": "uint32", "name": "powerUps", "type": "uint32" }
+    ],
+    "name": "submitRun",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "gm",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "player", "type": "address" }],
+    "name": "canGm",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "player", "type": "address" }],
+    "name": "getPlayerStats",
+    "outputs": [
+      { "internalType": "uint32", "name": "runs", "type": "uint32" },
+      { "internalType": "uint32", "name": "highScore", "type": "uint32" },
+      { "internalType": "uint32", "name": "coins", "type": "uint32" },
+      { "internalType": "uint32", "name": "longestDist", "type": "uint32" },
+      { "internalType": "uint32", "name": "combo", "type": "uint32" },
+      { "internalType": "uint32", "name": "streak", "type": "uint32" },
+      { "internalType": "uint32", "name": "gms", "type": "uint32" },
+      { "internalType": "bool", "name": "hasNFT", "type": "bool" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "address", "name": "player", "type": "address" }],
+    "name": "getPlayerRank",
+    "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "tokenId", "type": "uint256" }],
+    "name": "tokenURI",
+    "outputs": [{ "internalType": "string", "name": "", "type": "string" }],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

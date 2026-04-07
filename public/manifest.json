@@ -1,0 +1,16 @@
+{
+  "name": "Temple Base",
+  "short_name": "Temple Base",
+  "description": "The endless runner game Temple Base, onchain on Base",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0a1a",
+  "theme_color": "#d97706",
+  "icons": [
+    {
+      "src": "/app-icon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}
