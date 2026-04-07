@@ -17,13 +17,19 @@ function isInBaseApp(): boolean {
 }
 
 export default function BaseAppGate({ children }: { children: React.ReactNode }) {
-  const [checked, setChecked] = useState(true);
-  const [inside, setInside] = useState(true);
+  const isDev = process.env.NODE_ENV === "development";
+  const [checked, setChecked] = useState(isDev);
+  const [inside, setInside] = useState(isDev);
 
   useEffect(() => {
+    if (isDev) return;
+    const result = isInBaseApp();
+    setInside(result);
     setChecked(true);
-    setInside(true);
-  }, []);
+    if (!result) {
+      window.location.href = BASE_APP_DEEP_LINK;
+    }
+  }, [isDev]);
 
   if (!checked) {
     return (

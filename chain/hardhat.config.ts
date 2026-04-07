@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config({ override: true });
 
 const PRIVATE_KEY = (process.env.PRIVATE_KEY || "0".repeat(64)).trim();
-const BASESCAN_API_KEY = (process.env.BASESCAN_API_KEY || "").trim();
+const ETHERSCAN_API_KEY = (process.env.ETHERSCAN_API_KEY || "").trim();
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -22,7 +22,7 @@ const config: HardhatUserConfig = {
     },
   },
   etherscan: {
-    apiKey: BASESCAN_API_KEY,
+    apiKey: ETHERSCAN_API_KEY,
   },
   sourcify: {
     enabled: true,

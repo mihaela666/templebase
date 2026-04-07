@@ -158,7 +158,7 @@ contract TempleBase is ERC721, Ownable {
             rank, ' #', tokenId.toString(), '</text>',
             '<rect x="120" y="345" width="160" height="28" rx="14" fill="', rankColor, '" opacity="0.25"/>',
             '<text x="200" y="364" text-anchor="middle" font-family="sans-serif" font-weight="600" font-size="12" fill="', rankColor, '">',
-            runs.toString(), ' runs completed</text>',
+            uint256(runs).toString(), ' runs completed</text>',
             '</svg>'
         );
 
@@ -167,7 +167,7 @@ contract TempleBase is ERC721, Ownable {
             '","description":"Awarded to explorers of Temple Base on Base. Rank evolves with your runs.","image":"data:image/svg+xml;base64,',
             Base64.encode(bytes(svg)),
             '","attributes":[{"trait_type":"Rank","value":"', rank,
-            '"},{"trait_type":"Runs","value":"', runs.toString(),
+            '"},{"trait_type":"Runs","value":"', uint256(runs).toString(),
             '"},{"trait_type":"Token ID","value":"', tokenId.toString(),
             '"}]}'
         );
