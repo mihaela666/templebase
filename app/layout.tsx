@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   other: {
     "apple-mobile-web-app-title": "Temple Base",
-    "base:app_id": "REPLACE_WITH_YOUR_APP_ID",
+    "base:app_id": "69d5155791c13596e8962147",
   },
 };
 
