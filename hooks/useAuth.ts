@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useAccount, useConnect, useDisconnect } from "wagmi";
+import { injected } from "wagmi/connectors";
+import { useCallback } from "react";
 
 interface AuthState {
   ready: boolean;
@@ -10,62 +12,22 @@ interface AuthState {
   logout: () => void;
 }
 
-type EthProvider = {
-  request: (args: { method: string; params?: unknown[] }) => Promise<unknown>;
-  on?: (event: string, handler: (...args: unknown[]) => void) => void;
-};
-
-function getEthereum(): EthProvider | undefined {
-  if (typeof window === "undefined") return undefined;
-  return (window as unknown as { ethereum?: EthProvider }).ethereum;
-}
-
 export function useAuth(): AuthState {
-  const [ready, setReady] = useState(false);
-  const [address, setAddress] = useState<string | undefined>();
+  const { address, isConnected, status } = useAccount();
+  const { connect } = useConnect();
+  const { disconnect } = useDisconnect();
 
-  useEffect(() => {
-    const eth = getEthereum();
-    if (!eth) {
-      setReady(true);
-      return;
-    }
-
-    eth.request({ method: "eth_accounts" }).then((accounts) => {
-      const accs = accounts as string[];
-      if (accs.length > 0) {
-        setAddress(accs[0]);
-      }
-      setReady(true);
-    }).catch(() => setReady(true));
-
-    eth.on?.("accountsChanged", (accounts) => {
-      const accs = accounts as string[];
-      setAddress(accs.length > 0 ? accs[0] : undefined);
-    });
-  }, []);
-
-  const login = useCallback(async () => {
-    const eth = getEthereum();
-    if (!eth) return;
-    try {
-      const accounts = await eth.request({ method: "eth_requestAccounts" });
-      const accs = accounts as string[];
-      if (accs.length > 0) {
-        setAddress(accs[0]);
-      }
-    } catch {
-      // user rejected
-    }
-  }, []);
+  const login = useCallback(() => {
+    connect({ connector: injected() });
+  }, [connect]);
 
   const logout = useCallback(() => {
-    setAddress(undefined);
-  }, []);
+    disconnect();
+  }, [disconnect]);
 
   return {
-    ready,
-    authenticated: !!address,
+    ready: status !== "connecting" && status !== "reconnecting",
+    authenticated: isConnected,
     address,
     login,
     logout,
