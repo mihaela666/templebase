@@ -1,0 +1,23 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjAsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHhkOTJDMDkyMTZlNWE3MTY4QzIzYzlDN0QwRDRERTcwQmIyOTBjNmVkIn0",
+    "payload": "eyJkb21haW4iOiJ0ZW1wbGVvbmJhc2UudmVyY2VsLmFwcCJ9",
+    "signature": "0x"
+  },
+  "frame": {
+    "version": "1",
+    "name": "Temple Base",
+    "subtitle": "Run. Dodge. Earn on Base.",
+    "description": "Endless temple runner on Base. Dodge obstacles, collect coins, earn NFTs. Daily GM streak, on-chain leaderboard. How far can you run?",
+    "iconUrl": "https://templebase.vercel.app/app-icon-1024.png",
+    "splashImageUrl": "https://templebase.vercel.app/app-thumbnail.jpg",
+    "splashBackgroundColor": "#0d0a1a",
+    "homeUrl": "https://templebase.vercel.app",
+    "primaryCategory": "games",
+    "tags": ["temple-base", "game", "runner", "base", "onchain"],
+    "heroImageUrl": "https://templebase.vercel.app/app-thumbnail.jpg",
+    "ogTitle": "Temple Base",
+    "ogDescription": "Play Temple Base — the endless runner game, onchain.",
+    "ogImageUrl": "https://templebase.vercel.app/app-thumbnail.jpg"
+  }
+}
