@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://templeonbase.vercel.app";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://templebase.vercel.app";
 const BASE_APP_DEEP_LINK = `https://go.cb-w.com/dapp?cb_url=${encodeURIComponent(APP_URL)}`;
 
 function isInBaseApp(): boolean {

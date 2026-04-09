@@ -1,11 +1,14 @@
 import { http, createConfig, createStorage, cookieStorage } from "wagmi";
 import { base } from "wagmi/chains";
-import { injected } from "wagmi/connectors";
+import { baseAccount, injected } from "wagmi/connectors";
 
 export const config = createConfig({
   chains: [base],
   connectors: [
     injected(),
+    baseAccount({
+      appName: "Temple Base",
+    }),
   ],
   storage: createStorage({ storage: cookieStorage }),
   ssr: true,
